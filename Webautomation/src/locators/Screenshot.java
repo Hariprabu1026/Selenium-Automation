@@ -21,7 +21,7 @@ public class Screenshot {
 	options.addArguments("start-maximized");
 	//options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
 	ChromeDriver driver = new ChromeDriver(options);
-	
+	//test
 	driver.get("https://www.google.com/");
 	
 	File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
