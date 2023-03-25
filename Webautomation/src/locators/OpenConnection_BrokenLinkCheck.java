@@ -40,7 +40,7 @@ public class OpenConnection_BrokenLinkCheck {
 				System.out.println(textLink + repCode);
 				if(repCode > 400)
 				{
-					
+					Assert.assertTrue(false);
 				}
 			}
 
