@@ -40,9 +40,11 @@ public class OpenConnection_BrokenLinkCheck {
 				System.out.println(textLink + repCode);
 				if(repCode > 400)
 				{
+					System.out.println("This link with text "+link.getText()+" is broken with " + repCode);
 					Assert.assertTrue(false);
 				}
 			}
+			driver.close();
 
 	}
 
