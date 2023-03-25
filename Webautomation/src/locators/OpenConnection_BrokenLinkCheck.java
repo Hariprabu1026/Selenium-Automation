@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class OpenConnection_BrokenLinkCheck {
 
@@ -29,7 +30,8 @@ public class OpenConnection_BrokenLinkCheck {
 			driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 			
 			List<WebElement> links = driver.findElements(By.xpath("//li[@class='gf-li'] /a"));
-						
+			//SoftAssertion
+			SoftAssert sa = new SoftAssert();
 			for(WebElement link : links) {
 				String linkText = link.getAttribute("href");
 				String textLink = link.getText();
@@ -38,13 +40,17 @@ public class OpenConnection_BrokenLinkCheck {
 				conn.connect();
 				int repCode = conn.getResponseCode();
 				System.out.println(textLink + repCode);
-				if(repCode > 400)
-				{
-					System.out.println("This link with text "+link.getText()+" is broken with " + repCode);
-					Assert.assertTrue(false);
-				}
+//				if(repCode > 400)
+//				{
+//					System.out.println("This link with text "+link.getText()+" is broken with " + repCode);
+//					sa.assertTrue(false);
+//					
+//				}
+				
+				sa.assertTrue(repCode < 400, "This link with text "+link.getText()+" is broken with " + repCode);
+				
 			}
-			driver.close();
+			sa.assertAll();
 
 	}
 
