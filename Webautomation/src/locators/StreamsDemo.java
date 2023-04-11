@@ -58,10 +58,10 @@ public class StreamsDemo {
 
 		//Assert.assertTrue(originalNames.equals(sortedNames));
 		List<String> price;
-		// Get price of each vegetables
+		// Get p rice of each vegetables
 		do {
 			List<WebElement> vegNames = driver.findElements(By.xpath("//tbody/tr/td[1]"));
-			price = vegNames.stream().filter(s -> s.getText().contains("Rice")).map(s -> getPriceVeggie(s))
+			price = vegNames.stream().filter(s -> s.getText().contains("Strawberry")).map(s -> getPriceVeggie(s))
 					.collect(Collectors.toList());
 
 			price.forEach(a -> System.out.println(a));
