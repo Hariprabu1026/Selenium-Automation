@@ -15,9 +15,6 @@ import org.testng.Assert;
 
 public class StreamsDemo {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver",
 				"D:\\Automation\\chrome driver\\chromedriver_win32_111\\chromedriver.exe");

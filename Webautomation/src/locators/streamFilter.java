@@ -70,7 +70,7 @@ public class streamFilter {
 	{
 		
 		List<String> names = Arrays.asList("Genfield","Fortuner","Vento","Polo","Venue","Creta");
-		names.stream().filter(s->s.startsWith("V")).sorted().map(s->s.toLowerCase()).forEach(s->System.out.println(s));
+			names.stream().filter(s->s.startsWith("V")).sorted().map(s->s.toLowerCase()).forEach(s->System.out.println(s));
 		
 		List<String> names1 = Arrays.asList("Powerstar","Superstar","Littlestar","Rajni","Simbu");
 		
